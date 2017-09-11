@@ -28,4 +28,4 @@ Only accept file.
 default type: image [base64, image, canvas, blob, arraybuffer, hex]
 
 #### Demo Video
-[!Video Link https://www.facebook.com/ryanyang0818/videos/10213323607300029/]
+https://www.facebook.com/ryanyang0818/videos/10213323607300029/

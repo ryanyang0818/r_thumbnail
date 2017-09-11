@@ -2,6 +2,9 @@
 
 A jQuery plugin to parse thumbnail
 
+All kinds of Images、Videos、Audios. - As long as your browser surpport it.
+Chrome is the best browser to use this tool.
+
 ### Usage
 
 ```js

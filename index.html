@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+<script src="jquery-3.1.1.min.js"></script>
 <script src="lib/r_thumbnail.js"></script>
 <script>
 
@@ -10,41 +10,44 @@ $(function() {
 
     $('.testfile').change(function(ev) {
         var target = ev.currentTarget ;
-        var file = target.files[0] ;
         
-        $.r_thumbnail(file, {
-            type: "image",
-            withData: true
-        }, function(resp) {
-console.log(resp) ;
-/*
-{
-    file; file
-    type: image
-    thumbnail: thumbnail
-    data: 
-    {  //music
-        width
-        height
-        duration
-        year
-        album
-        artist
-        genre
-    },
-    {  //photo
-        width
-        height
-    },
-    {  //video
-        width
-        height
-        duration
-    },
-}
-*/
-            $('body').append(resp.thumbnail) ;
-        })
+        $.each(target.files, function(index, file) {
+            
+            $.r_thumbnail(file, {
+                type: "image",
+                withData: true
+            }, function(resp) {
+    console.log(resp) ;
+    /*
+    {
+        file; file
+        type: image
+        thumbnail: thumbnail
+        data: 
+        {  //music
+            width
+            height
+            duration
+            year
+            album
+            artist
+            genre
+        },
+        {  //photo
+            width
+            height
+        },
+        {  //video
+            width
+            height
+            duration
+        },
+    }
+    */
+                $('body').append(resp.thumbnail) ;
+            }) ;
+            
+        }) ;
     }) ;
     
 }) ;
@@ -54,7 +57,7 @@ console.log(resp) ;
 
 <body>
 
-<input class="testfile" type="file"><br>
+<input class="testfile" type="file" multiple><br>
 
 </body>
 
